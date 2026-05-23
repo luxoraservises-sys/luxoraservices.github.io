@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Luxora Services — Calidad premium, precios que sorprenden. Envíos a toda Latinoamérica y Estados Unidos.">
+<title>LUXORA SERVICES</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#C9A84C;--gold-l:#E8C96E;--gold-d:#9A7A2E;--gold-pale:#F5E9C9;--gold-glow:#C9A84C22;
+  --black:#080808;--black-s:#111111;--black-m:#1A1A1A;--black-c:#242424;
+  --white:#FAFAFA;--white-s:#F0EDE6;--gray-l:#E0D9CE;--gray-m:#B8B0A4;--gray-d:#6B6560;
+  --ff-d:'Cinzel',serif;--ff-h:'Cormorant Garamond',serif;--ff-b:'Jost',sans-serif;
+  --r:0px;--tr:0.3s ease;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:var(--ff-b);font-weight:300;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+img{max-width:100%;display:block}
+button{cursor:pointer;border:none;background:none;font-family:inherit}
+input,textarea,select{font-family:var(--ff-b)}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--black-m)}
+::-webkit-scrollbar-thumb{background:var(--gold-d);border-radius:0}
+
+/* ── UTILITIES ── */
+.gold{color:var(--gold)}
+.center{text-align:center}
+.section-tag{font-family:var(--ff-b);font-size:11px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:block}
+.divider{width:60px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:20px auto}
+.gold-line{width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+
+/* ── NAV ── */
+#nav{position:fixed;top:0;left:0;right:0;z-index:1000;transition:background var(--tr),border-bottom var(--tr);padding:0 40px;height:80px;display:flex;align-items:center;justify-content:space-between}
+#nav.scrolled{background:rgba(8,8,8,0.97);border-bottom:1px solid var(--gold-d)30}
+.nav-logo{display:flex;align-items:center;gap:14px}
+.logo-placeholder{width:46px;height:46px;border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--ff-d);font-size:18px;color:var(--gold);letter-spacing:1px}
+.logo-text{font-family:var(--ff-d);font-size:15px;letter-spacing:4px;color:var(--white);font-weight:600}
+.logo-text span{color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:36px}
+.nav-links a{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gray-m);transition:color var(--tr);position:relative;padding-bottom:4px}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--gold);transition:width var(--tr)}
+.nav-links a:hover{color:var(--gold)}
+.nav-links a:hover::after{width:100%}
+.nav-right{display:flex;align-items:center;gap:20px}
+.lang-toggle{display:flex;align-items:center;gap:0;border:1px solid var(--gold-d)60;overflow:hidden}
+.lang-btn{font-size:10px;letter-spacing:2px;padding:6px 12px;color:var(--gray-m);transition:all var(--tr)}
+.lang-btn.active{background:var(--gold);color:var(--black);font-weight:500}
+.cart-btn{width:44px;height:44px;border:1px solid var(--gold-d)60;display:flex;align-items:center;justify-content:center;position:relative;transition:border-color var(--tr)}
+.cart-btn:hover{border-color:var(--gold)}
+.cart-btn svg{width:18px;height:18px;stroke:var(--gold);fill:none;stroke-width:1.5}
+.cart-count{position:absolute;top:-6px;right:-6px;background:var(--gold);color:var(--black);font-size:9px;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:500;display:none}
+.cart-count.visible{display:flex}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:4px}
+.hamburger span{width:22px;height:1.5px;background:var(--gold);display:block;transition:all var(--tr)}
+
+/* ── HERO ── */
+#hero{height:100vh;min-height:700px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 60%,#1a1505 0%,var(--black) 70%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--gold)08 1px,transparent 1px),linear-gradient(90deg,var(--gold)08 1px,transparent 1px);background-size:80px 80px;opacity:0.6}
+.hero-corner{position:absolute;width:180px;height:180px;border-color:var(--gold-d);border-style:solid;opacity:0.4}
+.hc-tl{top:120px;left:60px;border-width:1px 0 0 1px}
+.hc-tr{top:120px;right:60px;border-width:1px 1px 0 0}
+.hc-bl{bottom:80px;left:60px;border-width:0 0 1px 1px}
+.hc-br{bottom:80px;right:60px;border-width:0 1px 1px 0}
+.hero-inner{position:relative;z-index:2;text-align:center;padding:0 24px;max-width:900px}
+.hero-pre{font-size:10px;letter-spacing:8px;text-transform:uppercase;color:var(--gold);margin-bottom:24px;opacity:0;animation:fadeDown .8s .3s forwards}
+.hero-title{font-family:var(--ff-d);font-size:clamp(42px,7vw,90px);font-weight:700;line-height:1;letter-spacing:6px;color:var(--white);margin-bottom:8px;opacity:0;animation:fadeUp .9s .5s forwards}
+.hero-title .gold-accent{color:var(--gold);display:block;font-size:.6em;letter-spacing:10px;font-weight:400;margin-top:12px}
+.hero-rule{width:120px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:28px auto;opacity:0;animation:fadeIn .8s .9s forwards}
+.hero-slogan{font-family:var(--ff-h);font-style:italic;font-size:clamp(18px,2.5vw,26px);color:var(--gray-l);font-weight:300;margin-bottom:48px;opacity:0;animation:fadeUp .8s 1s forwards}
+.hero-actions{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;opacity:0;animation:fadeUp .8s 1.2s forwards}
+.btn-gold{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--black);font-family:var(--ff-b);font-size:11px;letter-spacing:3px;text-transform:uppercase;padding:16px 36px;font-weight:500;transition:all var(--tr);position:relative;overflow:hidden}
+.btn-gold::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:rgba(255,255,255,.15);transition:left .4s}
+.btn-gold:hover::before{left:0}
+.btn-gold:hover{background:var(--gold-l)}
+.btn-outline{display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--gold);font-family:var(--ff-b);font-size:11px;letter-spacing:3px;text-transform:uppercase;padding:15px 36px;border:1px solid var(--gold);font-weight:400;transition:all var(--tr)}
+.btn-outline:hover{background:var(--gold);color:var(--black)}
+.hero-scroll{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;opacity:.5}
+.hero-scroll span{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gray-m)}
+.scroll-line{width:1px;height:50px;background:linear-gradient(var(--gold),transparent);animation:scrollPulse 2s infinite}
+
+/* ── TRUST BAR ── */
+#trust{background:var(--black-m);border-top:1px solid var(--gold-d)30;border-bottom:1px solid var(--gold-d)30;padding:28px 40px}
+.trust-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.trust-item{display:flex;align-items:center;gap:14px;justify-content:center}
+.trust-icon{width:36px;height:36px;flex-shrink:0}
+.trust-icon svg{width:100%;height:100%;stroke:var(--gold);fill:none;stroke-width:1.2}
+.trust-text strong{display:block;font-family:var(--ff-b);font-size:12px;letter-spacing:2px;color:var(--white);text-transform:uppercase;font-weight:400}
+.trust-text small{font-size:11px;color:var(--gray-m)}
+
+/* ── SECTION BASE ── */
+.section{padding:100px 40px;max-width:1300px;margin:0 auto}
+.section-header{text-align:center;margin-bottom:64px}
+.section-header h2{font-family:var(--ff-d);font-size:clamp(28px,3.5vw,46px);font-weight:600;letter-spacing:4px;line-height:1.2;color:var(--white)}
+.section-header h2 em{color:var(--gold);font-style:normal}
+.section-header p{font-family:var(--ff-h);font-style:italic;font-size:18px;color:var(--gray-m);margin-top:16px}
+
+/* ── CATEGORIES ── */
+#categories{background:var(--black-s)}
+.cats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
+.cat-card{position:relative;aspect-ratio:1;overflow:hidden;cursor:pointer;background:var(--black-m)}
+.cat-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--black-m),var(--black-c));z-index:0;transition:opacity var(--tr)}
+.cat-card:hover::before{opacity:.4}
+.cat-bg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:.08;transition:opacity var(--tr)}
+.cat-card:hover .cat-bg{opacity:.14}
+.cat-bg svg{width:60%;height:60%;stroke:var(--gold);fill:none;stroke-width:.4}
+.cat-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,transparent 50%);z-index:1}
+.cat-glow{position:absolute;inset:0;border:1px solid transparent;transition:border-color var(--tr);z-index:2}
+.cat-card:hover .cat-glow{border-color:var(--gold)40}
+.cat-content{position:absolute;bottom:0;left:0;right:0;padding:24px 20px;z-index:3}
+.cat-icon-wrap{width:44px;height:44px;border:1px solid var(--gold)50;display:flex;align-items:center;justify-content:center;margin-bottom:12px;transition:all var(--tr)}
+.cat-card:hover .cat-icon-wrap{border-color:var(--gold);background:var(--gold)15}
+.cat-icon-wrap svg{width:20px;height:20px;stroke:var(--gold);fill:none;stroke-width:1.5}
+.cat-name{font-family:var(--ff-d);font-size:13px;letter-spacing:2px;color:var(--white);text-transform:uppercase;margin-bottom:4px}
+.cat-count{font-size:11px;color:var(--gray-m);letter-spacing:1px}
+.cat-arrow{position:absolute;top:20px;right:20px;z-index:3;width:32px;height:32px;border:1px solid var(--gold)30;display:flex;align-items:center;justify-content:center;opacity:0;transition:all var(--tr)}
+.cat-card:hover .cat-arrow{opacity:1;border-color:var(--gold)80}
+.cat-arrow svg{width:14px;height:14px;stroke:var(--gold);fill:none;stroke-width:2}
+
+/* ── FEATURED PRODUCTS ── */
+#products{background:var(--black)}
+.products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--black-m)}
+.prod-card{background:var(--black-s);overflow:hidden;cursor:pointer;transition:transform .4s;position:relative}
+.prod-card:hover{transform:translateY(-4px)}
+.prod-img{height:260px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.prod-img-bg{position:absolute;inset:0;transition:transform .5s}
+.prod-card:hover .prod-img-bg{transform:scale(1.06)}
+.prod-img-icon{position:relative;z-index:2;opacity:.35}
+.prod-img-icon svg{width:60px;height:60px;stroke:var(--gold);fill:none;stroke-width:.8}
+.prod-badge{position:absolute;top:16px;left:16px;z-index:3;background:var(--gold);color:var(--black);font-size:9px;letter-spacing:2px;padding:5px 10px;text-transform:uppercase;font-weight:500}
+.prod-badge.new{background:var(--black-m);color:var(--gold);border:1px solid var(--gold)50}
+.prod-wish{position:absolute;top:14px;right:14px;z-index:3;width:34px;height:34px;border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;transition:all var(--tr);opacity:0}
+.prod-card:hover .prod-wish{opacity:1}
+.prod-wish:hover{border-color:var(--gold);background:var(--gold)20}
+.prod-wish svg{width:14px;height:14px;stroke:var(--gray-m);fill:none;stroke-width:1.5;transition:stroke var(--tr)}
+.prod-wish:hover svg{stroke:var(--gold)}
+.prod-info{padding:20px 22px 24px}
+.prod-category{font-size:9px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:8px}
+.prod-name{font-family:var(--ff-h);font-size:19px;color:var(--white);margin-bottom:6px;font-weight:400;line-height:1.3}
+.prod-desc{font-size:12px;color:var(--gray-m);line-height:1.6;margin-bottom:16px}
+.prod-footer{display:flex;align-items:center;justify-content:space-between}
+.prod-price{font-family:var(--ff-d);font-size:18px;color:var(--gold);font-weight:500}
+.prod-price-old{font-size:12px;color:var(--gray-d);text-decoration:line-through;margin-left:6px}
+.add-cart-btn{background:transparent;border:1px solid var(--gold)50;color:var(--gold);font-family:var(--ff-b);font-size:9px;letter-spacing:2px;padding:9px 16px;text-transform:uppercase;transition:all var(--tr)}
+.add-cart-btn:hover{background:var(--gold);color:var(--black);border-color:var(--gold)}
+
+/* ── MARQUEE ── */
+.marquee-wrap{background:var(--gold);padding:14px 0;overflow:hidden}
+.marquee-track{display:flex;gap:60px;white-space:nowrap;animation:marquee 22s linear infinite}
+.marquee-track:hover{animation-play-state:paused}
+.marquee-item{font-family:var(--ff-d);font-size:12px;letter-spacing:4px;color:var(--black);text-transform:uppercase;flex-shrink:0}
+.marquee-dot{font-size:8px;color:var(--black-m);opacity:.5}
+
+/* ── ABOUT / DIRECTOR ── */
+#about{background:var(--black-m);padding:100px 40px}
+.about-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about-left{position:relative}
+.about-portrait{width:100%;aspect-ratio:3/4;background:linear-gradient(160deg,#1a1505 0%,#0a0805 100%);position:relative;overflow:hidden;display:flex;align-items:flex-end;justify-content:center}
+.portrait-frame{position:absolute;inset:20px;border:1px solid var(--gold)25;pointer-events:none}
+.portrait-corner{position:absolute;width:24px;height:24px;border-color:var(--gold);border-style:solid}
+.pc-tl{top:-1px;left:-1px;border-width:2px 0 0 2px}
+.pc-tr{top:-1px;right:-1px;border-width:2px 2px 0 0}
+.pc-bl{bottom:-1px;left:-1px;border-width:0 0 2px 2px}
+.pc-br{bottom:-1px;right:-1px;border-width:0 2px 2px 0}
+.portrait-initials{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px}
+.portrait-initials span{font-family:var(--ff-d);font-size:80px;color:var(--gold)15;letter-spacing:8px}
+.portrait-initials small{font-family:var(--ff-d);font-size:10px;letter-spacing:4px;color:var(--gold)30}
+.portrait-name{position:absolute;bottom:0;left:0;right:0;padding:24px;background:linear-gradient(transparent,rgba(0,0,0,.9));text-align:center}
+.portrait-name strong{display:block;font-family:var(--ff-d);font-size:16px;letter-spacing:3px;color:var(--white)}
+.portrait-name em{font-family:var(--ff-h);font-style:italic;font-size:14px;color:var(--gold)}
+.about-right .section-tag{text-align:left;display:block}
+.about-right h2{font-family:var(--ff-d);font-size:clamp(28px,3vw,42px);font-weight:600;letter-spacing:3px;line-height:1.2;color:var(--white);margin-bottom:24px}
+.about-right h2 em{color:var(--gold);font-style:normal}
+.about-body{font-family:var(--ff-h);font-size:18px;color:var(--gray-m);line-height:1.9;font-weight:400;margin-bottom:32px}
+.about-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;padding-top:40px;border-top:1px solid var(--gold-d)25}
+.stat-item{text-align:center}
+.stat-num{font-family:var(--ff-d);font-size:28px;color:var(--gold);font-weight:600;display:block}
+.stat-label{font-size:10px;letter-spacing:2px;color:var(--gray-m);text-transform:uppercase}
+
+/* ── SHIPPING ── */
+#shipping{background:var(--black-s);padding:80px 40px}
+.ship-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.ship-map{position:relative;aspect-ratio:16/10;background:var(--black-m);border:1px solid var(--gold-d)20;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.ship-map svg{width:90%;opacity:.8}
+.ship-info h2{font-family:var(--ff-d);font-size:clamp(24px,3vw,36px);letter-spacing:3px;color:var(--white);margin-bottom:20px;line-height:1.3}
+.ship-info h2 em{color:var(--gold);font-style:normal}
+.ship-info p{font-family:var(--ff-h);font-size:17px;color:var(--gray-m);line-height:1.8;margin-bottom:32px}
+.ship-zones{display:flex;flex-direction:column;gap:12px}
+.ship-zone{display:flex;align-items:center;gap:14px;padding:14px 18px;border:1px solid var(--gold-d)25;background:var(--black-m)}
+.zone-dot{width:10px;height:10px;border-radius:50%;background:var(--gold);flex-shrink:0}
+.zone-text strong{font-size:13px;color:var(--white);letter-spacing:1px;display:block}
+.zone-text span{font-size:11px;color:var(--gray-m)}
+
+/* ── CONTACT ── */
+#contact{background:var(--black);padding:100px 40px}
+.contact-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px}
+.contact-info h2{font-family:var(--ff-d);font-size:clamp(26px,3vw,38px);letter-spacing:3px;color:var(--white);margin-bottom:24px}
+.contact-info h2 em{color:var(--gold);font-style:normal}
+.contact-info > p{font-family:var(--ff-h);font-style:italic;font-size:17px;color:var(--gray-m);line-height:1.8;margin-bottom:48px}
+.contact-details{display:flex;flex-direction:column;gap:20px}
+.contact-item{display:flex;align-items:flex-start;gap:18px;padding:20px;border:1px solid var(--gold-d)20;background:var(--black-m)}
+.contact-item-icon{width:40px;height:40px;border:1px solid var(--gold)40;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.contact-item-icon svg{width:18px;height:18px;stroke:var(--gold);fill:none;stroke-width:1.5}
+.contact-item strong{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px}
+.contact-item a, .contact-item span{font-family:var(--ff-h);font-size:17px;color:var(--white);transition:color var(--tr)}
+.contact-item a:hover{color:var(--gold)}
+.contact-form-wrap h3{font-family:var(--ff-d);font-size:18px;letter-spacing:3px;color:var(--white);margin-bottom:32px}
+.form-group{margin-bottom:20px}
+.form-group label{display:block;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.form-group input, .form-group textarea, .form-group select{width:100%;background:var(--black-m);border:1px solid var(--gold-d)25;color:var(--white);font-family:var(--ff-b);font-size:14px;font-weight:300;padding:14px 16px;outline:none;transition:border-color var(--tr)}
+.form-group input:focus, .form-group textarea:focus{border-color:var(--gold)60}
+.form-group textarea{resize:vertical;min-height:120px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+
+/* ── FOOTER ── */
+footer{background:var(--black-s);border-top:1px solid var(--gold-d)20;padding:64px 40px 32px}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:60px}
+.footer-brand p{font-size:13px;color:var(--gray-m);line-height:1.8;margin:20px 0 28px;max-width:280px}
+.footer-social{display:flex;gap:10px}
+.social-btn{width:38px;height:38px;border:1px solid var(--gold-d)30;display:flex;align-items:center;justify-content:center;transition:all var(--tr)}
+.social-btn:hover{border-color:var(--gold);background:var(--gold)15}
+.social-btn svg{width:16px;height:16px;stroke:var(--gray-m);fill:none;stroke-width:1.5;transition:stroke var(--tr)}
+.social-btn:hover svg{stroke:var(--gold)}
+.footer-col h4{font-family:var(--ff-d);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+.footer-col ul{display:flex;flex-direction:column;gap:10px}
+.footer-col ul li a{font-size:13px;color:var(--gray-m);transition:color var(--tr)}
+.footer-col ul li a:hover{color:var(--gold)}
+.footer-bottom{border-top:1px solid var(--gold-d)15;padding-top:28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer-bottom p{font-size:11px;color:var(--gray-d);letter-spacing:1px}
+.footer-bottom p a{color:var(--gold);transition:opacity var(--tr)}
+.footer-bottom p a:hover{opacity:.7}
+.footer-pay{display:flex;gap:8px}
+.pay-badge{border:1px solid var(--gold-d)25;padding:5px 12px;font-size:10px;letter-spacing:1px;color:var(--gray-d)}
+
+/* ── CART DRAWER ── */
+#cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:1100;opacity:0;pointer-events:none;transition:opacity var(--tr)}
+#cart-overlay.open{opacity:1;pointer-events:all}
+#cart-drawer{position:fixed;top:0;right:0;bottom:0;width:420px;background:var(--black-s);border-left:1px solid var(--gold-d)20;z-index:1101;transform:translateX(100%);transition:transform .4s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column}
+#cart-drawer.open{transform:translateX(0)}
+.cart-header{padding:24px 28px;border-bottom:1px solid var(--gold-d)20;display:flex;justify-content:space-between;align-items:center}
+.cart-header h3{font-family:var(--ff-d);font-size:14px;letter-spacing:3px;text-transform:uppercase;color:var(--white)}
+.cart-close{width:36px;height:36px;border:1px solid var(--gold-d)30;display:flex;align-items:center;justify-content:center;transition:all var(--tr)}
+.cart-close:hover{border-color:var(--gold)}
+.cart-close svg{width:16px;height:16px;stroke:var(--gray-m);fill:none;stroke-width:2}
+.cart-items{flex:1;overflow-y:auto;padding:20px 28px}
+.cart-empty{text-align:center;padding:60px 20px;color:var(--gray-d);font-family:var(--ff-h);font-style:italic;font-size:18px}
+.cart-empty svg{width:48px;height:48px;stroke:var(--gold-d);fill:none;stroke-width:.8;margin:0 auto 16px}
+.cart-item{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--gold-d)15}
+.ci-img{width:72px;height:72px;flex-shrink:0;background:var(--black-m);border:1px solid var(--gold-d)15;display:flex;align-items:center;justify-content:center}
+.ci-img svg{width:28px;height:28px;stroke:var(--gold)50;fill:none;stroke-width:1}
+.ci-info{flex:1}
+.ci-name{font-family:var(--ff-h);font-size:15px;color:var(--white);margin-bottom:4px}
+.ci-cat{font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:10px}
+.ci-controls{display:flex;align-items:center;justify-content:space-between}
+.ci-qty{display:flex;align-items:center;gap:0;border:1px solid var(--gold-d)25}
+.ci-qty button{width:28px;height:28px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:16px;transition:background var(--tr)}
+.ci-qty button:hover{background:var(--gold)20}
+.ci-qty span{width:32px;text-align:center;font-size:13px}
+.ci-price{font-family:var(--ff-d);font-size:16px;color:var(--gold)}
+.ci-remove{font-size:11px;color:var(--gray-d);letter-spacing:1px;text-transform:uppercase;transition:color var(--tr);margin-top:6px;display:block}
+.ci-remove:hover{color:var(--gold)}
+.cart-footer{padding:24px 28px;border-top:1px solid var(--gold-d)20}
+.cart-subtotal{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.cart-subtotal span{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gray-m)}
+.cart-subtotal strong{font-family:var(--ff-d);font-size:20px;color:var(--gold)}
+.cart-checkout-btn{width:100%;background:var(--gold);color:var(--black);font-family:var(--ff-b);font-size:11px;letter-spacing:3px;text-transform:uppercase;padding:18px;font-weight:500;transition:background var(--tr)}
+.cart-checkout-btn:hover{background:var(--gold-l)}
+.cart-continue{display:block;text-align:center;font-size:11px;letter-spacing:2px;color:var(--gray-d);text-transform:uppercase;margin-top:14px;transition:color var(--tr)}
+.cart-continue:hover{color:var(--gold)}
+
+/* ── CHECKOUT MODAL ── */
+#checkout-modal{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:1200;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity var(--tr)}
+#checkout-modal.open{opacity:1;pointer-events:all}
+.checkout-box{background:var(--black-s);border:1px solid var(--gold-d)25;max-width:580px;width:100%;max-height:90vh;overflow-y:auto;position:relative}
+.checkout-head{padding:28px 32px;border-bottom:1px solid var(--gold-d)20;display:flex;justify-content:space-between;align-items:center}
+.checkout-head h3{font-family:var(--ff-d);font-size:14px;letter-spacing:3px;color:var(--white);text-transform:uppercase}
+.modal-close-btn{width:36px;height:36px;border:1px solid var(--gold-d)30;display:flex;align-items:center;justify-content:center}
+.modal-close-btn:hover{border-color:var(--gold)}
+.modal-close-btn svg{width:16px;height:16px;stroke:var(--gray-m);fill:none;stroke-width:2}
+.checkout-body{padding:32px}
+.checkout-section-title{font-family:var(--ff-d);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--gold-d)15}
+.card-input-wrap{position:relative;margin-bottom:20px}
+.card-input-wrap input{padding-right:48px}
+.card-icon{position:absolute;right:14px;top:50%;transform:translateY(-50%)}
+.card-icon svg{width:22px;height:16px;stroke:var(--gray-d);fill:none;stroke-width:1.2}
+.checkout-total{background:var(--black-m);border:1px solid var(--gold-d)20;padding:20px;margin:24px 0}
+.checkout-total-row{display:flex;justify-content:space-between;font-size:13px;color:var(--gray-m);margin-bottom:8px}
+.checkout-total-row.total{font-family:var(--ff-d);font-size:18px;color:var(--gold);margin-bottom:0;margin-top:12px;padding-top:12px;border-top:1px solid var(--gold-d)20}
+.checkout-submit{width:100%;background:var(--gold);color:var(--black);font-family:var(--ff-b);font-size:12px;letter-spacing:3px;text-transform:uppercase;padding:18px;font-weight:500;transition:background var(--tr)}
+.checkout-submit:hover{background:var(--gold-l)}
+.checkout-secure{display:flex;align-items:center;gap:8px;justify-content:center;margin-top:16px;font-size:11px;color:var(--gray-d);letter-spacing:1px}
+.checkout-secure svg{width:14px;height:14px;stroke:var(--gray-d);fill:none;stroke-width:1.5}
+
+/* ── SUCCESS MODAL ── */
+#success-modal{position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:1300;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity .5s}
+#success-modal.open{opacity:1;pointer-events:all}
+.success-box{background:var(--black-s);border:1px solid var(--gold-d)40;max-width:480px;width:100%;text-align:center;padding:60px 48px}
+.success-icon{width:72px;height:72px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 28px}
+.success-icon svg{width:32px;height:32px;stroke:var(--gold);fill:none;stroke-width:1.5}
+.success-box h2{font-family:var(--ff-d);font-size:24px;letter-spacing:3px;color:var(--white);margin-bottom:16px}
+.success-box p{font-family:var(--ff-h);font-style:italic;font-size:17px;color:var(--gray-m);line-height:1.8;margin-bottom:32px}
+.success-order{font-size:11px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:32px}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes scrollPulse{0%,100%{opacity:.3;transform:scaleY(.8)}50%{opacity:1;transform:scaleY(1)}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes goldShimmer{0%{background-position:0% 50%}100%{background-position:200% 50%}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.reveal.visible{opacity:1;transform:none}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1100px){
+  .cats-grid{grid-template-columns:repeat(4,1fr)}
+  .products-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-top{grid-template-columns:1fr 1fr;gap:40px}
+  .trust-inner{grid-template-columns:repeat(2,1fr)}
+  .about-inner{grid-template-columns:1fr;gap:48px}
+  .ship-inner{grid-template-columns:1fr;gap:48px}
+  .contact-inner{grid-template-columns:1fr;gap:48px}
+}
+@media(max-width:768px){
+  #nav{padding:0 20px;height:68px}
+  .nav-links{display:none}
+  .nav-links.mob-open{display:flex;flex-direction:column;position:fixed;top:68px;left:0;right:0;background:rgba(8,8,8,.98);padding:32px 24px;gap:28px;border-bottom:1px solid var(--gold-d)20}
+  .hamburger{display:flex}
+  .cats-grid{grid-template-columns:repeat(2,1fr)}
+  .products-grid{grid-template-columns:repeat(1,1fr)}
+  .section{padding:70px 20px}
+  #trust{padding:24px 20px}
+  .trust-inner{grid-template-columns:1fr 1fr}
+  .about-inner,.ship-inner,.contact-inner{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr 1fr}
+  .hero-corner{display:none}
+  #cart-drawer{width:100%}
+  .form-row{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .cats-grid{grid-template-columns:1fr 1fr}
+  .trust-inner{grid-template-columns:1fr}
+  .about-stats{grid-template-columns:1fr 1fr}
+  .footer-top{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <div class="logo-placeholder" id="logo-img" title="Upload your logo here">L</div>
+    <div>
+      <div class="logo-text">LUXORA <span>SERVICES</span></div>
+    </div>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#" data-i18n="nav_home">Inicio</a></li>
+    <li><a href="#categories" data-i18n="nav_categories">Categorías</a></li>
+    <li><a href="#products" data-i18n="nav_products">Productos</a></li>
+    <li><a href="#about" data-i18n="nav_about">Nosotros</a></li>
+    <li><a href="#contact" data-i18n="nav_contact">Contacto</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('es')">ES</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
+    <button class="cart-btn" onclick="openCart()" aria-label="Cart">
+      <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+    <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-corner hc-tl"></div>
+  <div class="hero-corner hc-tr"></div>
+  <div class="hero-corner hc-bl"></div>
+  <div class="hero-corner hc-br"></div>
+  <div class="hero-inner">
+    <span class="hero-pre" data-i18n="hero_pre">Bienvenido a la Excelencia</span>
+    <h1 class="hero-title">
+      LUXORA
+      <span class="gold-accent">SERVICES</span>
+    </h1>
+    <div class="hero-rule"></div>
+    <p class="hero-slogan" data-i18n="hero_slogan">Calidad premium, precios que sorprenden</p>
+    <div class="hero-actions">
+      <a href="#products" class="btn-gold">
+        <span data-i18n="hero_cta1">Explorar Colección</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#categories" class="btn-outline" data-i18n="hero_cta2">Ver Categorías</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span data-i18n="hero_scroll">Descubrir</span>
+  </div>
+</section>
+
+<!-- ═══ TRUST BAR ═══ -->
+<div id="trust">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h5l3 3v5h-8V8zm4 0v3h3"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      </div>
+      <div class="trust-text">
+        <strong data-i18n="trust1_t">Envío Express</strong>
+        <small data-i18n="trust1_s">USA & Latinoamérica</small>
+      </div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+      </div>
+      <div class="trust-text">
+        <strong data-i18n="trust2_t">Pago Seguro</strong>
+        <small data-i18n="trust2_s">SSL 256-bit cifrado</small>
+      </div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <div class="trust-text">
+        <strong data-i18n="trust3_t">USA · LATAM</strong>
+        <small data-i18n="trust3_s">20+ países de cobertura</small>
+      </div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div class="trust-text">
+        <strong data-i18n="trust4_t">Garantía Premium</strong>
+        <small data-i18n="trust4_s">30 días sin preguntas</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CATEGORIES ═══ -->
+<section id="categories" style="background:var(--black-s);padding:80px 0 0">
+  <div class="section" style="padding-bottom:0">
+    <div class="section-header reveal">
+      <span class="section-tag" data-i18n="cat_tag">Nuestras Categorías</span>
+      <h2><em data-i18n="cat_h2a">Explorar</em> <span data-i18n="cat_h2b">Todo el Catálogo</span></h2>
+      <div class="divider"></div>
+      <p data-i18n="cat_sub">Descubre nuestra amplia selección de productos premium en cada categoría</p>
+    </div>
+  </div>
+  <div class="cats-grid">
+    <!-- Category 1 -->
+    <div class="cat-card" onclick="filterCat('moda')">
+      <div class="cat-bg"><svg viewBox="0 0 24 24"><path d="M20.38 3.46L16 2a4 4 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.57a1 1 0 00.99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 002-2V10h2.15a1 1 0 00.99-.84l.58-3.57a2 2 0 00-1.34-2.23z"/></svg></div>
+      <div class="cat-overlay"></div>
+      <div class="cat-glow"></div>
+      <div class="cat-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
+      <div class="cat-content">
+        <div class="cat-icon-wrap"><svg viewBox="0 0 24 24"><path d="M20.38 3.46L16 2a4 4 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.57a1 1 0 00.99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 002-2V10h2.15a1 1 0 00.99-.84l.58-3.57a2 2 0 00-1.34-2.23z"/></svg></div>
+        <div class="cat-name" data-i18n="cat1">Moda & Accesorios</div>
+        <div class="cat-count" data-i18n="cat1c">48 productos</div>
+      </div>
+    </div>
+    <!-- Category 2 -->
+    <div class="cat-card" onclick="filterCat('joyeria')">
+      <div class="cat-bg"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+      <div class="cat-overlay"></div>
+      <div class="cat-glow"></div>
+      <div class="cat-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
+      <div class="cat-content">
+        <div class="cat-icon-wrap"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <div class="cat-name" data-i18n="cat2">Joyería & Relojes</div>
+        <div class="cat-count" data-i18n="cat2c">36 productos</div>
+      </div>
+    </div>
+    <!-- Category 3 -->
+    <div class="cat-card" onclick="filterCat('belleza')">
+      <div class="cat-bg"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+      <div class="cat-overlay"></div>
+      <div class="cat-glow"></div>
+      <div class="cat-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
+      <div class="cat-content">
+        <div class="cat-icon-wrap"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+        <div class="cat-name" data-i18n="cat3">Belleza & Cuidado</div>
+        <div class="cat-count" data-i18n="cat3c">54 productos</div>
+      </div>
+    </div>
+    <!-- Category 4 -->
+    <div class="cat-card" onclick="filterCat('hogar')">
+      <div class="cat-bg"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <div class="cat-overlay"></div>
+      <div class="cat-glow"></div>
+      <div class="cat-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
+      <div class="cat-content">
+        <div class="cat-icon-wrap"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <div class="cat-name" data-i18n="cat4">Hogar & Decoración</div>
+        <div class="cat-count" data-i18n="cat4c">62 productos</div>
+      </div>
+    </div>
+    <!-- Category 5 -->
+    <div class="cat-card" onclick="filterCat('tech')">
+      <div class="cat-bg"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+      <div class="cat-overlay"></div>
+      <div class="cat-glow"></div>
+      <div class="cat-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
+      <div class="cat-content">
+        <div class="cat-icon-wrap"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <div class="cat-name" data-i18n="cat5">Tecnología Premium</div>
+        <div class="cat-count" data-i18n="cat5c">29 productos</div>
+      </div>
+    </div>
+    <!-- Category 6 -->
+    <div class="cat-card" onclick="filterCat('arte')">
+      <div class="cat-bg"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg></div>
+      <div class="cat-overlay"></div>
+      <div class="cat-glow"></div>
+      <div class="cat-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
+      <div class="cat-content">
+        <div class="cat-icon-wrap"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg></div>
+        <div class="cat-name" data-i18n="cat6">Arte & Coleccionables</div>
+        <div class="cat-count" data-i18n="cat6c">18 productos</div>
+      </div>
+    </div>
+    <!-- Category 7 -->
+    <div class="cat-card" onclick="filterCat('viajes')">
+      <div class="cat-bg"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.63 19.79 19.79 0 01.0 2a2 2 0 012-2.18h3A2 2 0 017 1.72 12.84 12.84 0 007.7 5.6a2 2 0 01-.45 2.11L6.09 8.87a16 16 0 006 6l1.16-1.16a2 2 0 012.11-.45 12.84 12.84 0 003.88.7A2 2 0 0121.27 16z"/></svg></div>
+      <div class="cat-overlay"></div>
+      <div class="cat-glow"></div>
+      <div class="cat-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
+      <div class="cat-content">
+        <div class="cat-icon-wrap"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.63 19.79 19.79 0 01.0 2a2 2 0 012-2.18h3A2 2 0 017 1.72 12.84 12.84 0 007.7 5.6a2 2 0 01-.45 2.11L6.09 8.87a16 16 0 006 6l1.16-1.16a2 2 0 012.11-.45 12.84 12.84 0 003.88.7A2 2 0 0121.27 16z"/></svg></div>
+        <div class="cat-name" data-i18n="cat7">Viajes & Experiencias</div>
+        <div class="cat-count" data-i18n="cat7c">25 paquetes</div>
+      </div>
+    </div>
+    <!-- Category 8 -->
+    <div class="cat-card" onclick="filterCat('servicios')">
+      <div class="cat-bg"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div>
+      <div class="cat-overlay"></div>
+      <div class="cat-glow"></div>
+      <div class="cat-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
+      <div class="cat-content">
+        <div class="cat-icon-wrap"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div>
+        <div class="cat-name" data-i18n="cat8">Servicios Exclusivos</div>
+        <div class="cat-count" data-i18n="cat8c">VIP & Personalizado</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MARQUEE ═══ -->
+<div class="marquee-wrap">
+  <div class="marquee-track" id="marqueeTrack">
+    <span class="marquee-item" data-i18n="mq1">Envíos Express</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item" data-i18n="mq2">Calidad Premium</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item" data-i18n="mq3">USA & Latinoamérica</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item" data-i18n="mq4">Garantía Total</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item" data-i18n="mq5">Atención Personalizada</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item" data-i18n="mq6">Productos Exclusivos</span><span class="marquee-dot">◆</span>
+    <!-- Duplicate for seamless scroll -->
+    <span class="marquee-item" data-i18n="mq1">Envíos Express</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item" data-i18n="mq2">Calidad Premium</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item" data-i18n="mq3">USA & Latinoamérica</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item" data-i18n="mq4">Garantía Total</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item" data-i18n="mq5">Atención Personalizada</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item" data-i18n="mq6">Productos Exclusivos</span><span class="marquee-dot">◆</span>
+  </div>
+</div>
+
+<!-- ═══ FEATURED PRODUCTS ═══ -->
+<section id="products" style="background:var(--black)">
+  <div class="section">
+    <div class="section-header reveal">
+      <span class="section-tag" data-i18n="prod_tag">Colección Destacada</span>
+      <h2><em data-i18n="prod_h2a">Productos</em> <span data-i18n="prod_h2b">Premium</span></h2>
+      <div class="divider"></div>
+      <p data-i18n="prod_sub">Selección curada de los mejores artículos de lujo</p>
+    </div>
+  </div>
+  <div class="products-grid" id="productsGrid">
+    <!-- Product 1 -->
+    <div class="prod-card reveal">
+      <div class="prod-img">
+        <div class="prod-img-bg" style="background:linear-gradient(135deg,#1a1205 0%,#2d1f0a 60%,#1a1205 100%);width:100%;height:100%;position:absolute;inset:0"></div>
+        <div class="prod-img-icon"><svg viewBox="0 0 24 24"><path d="M20.38 3.46L16 2a4 4 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.57a1 1 0 00.99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 002-2V10h2.15a1 1 0 00.99-.84l.58-3.57a2 2 0 00-1.34-2.23z"/></svg></div>
+        <div class="prod-badge" data-i18n="badge_sale">OFERTA</div>
+        <button class="prod-wish"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
+      </div>
+      <div class="prod-info">
+        <div class="prod-category" data-i18n="pcat_moda">Moda & Accesorios</div>
+        <div class="prod-name" data-i18n="p1_name">Bolso Florentino de Cuero</div>
+        <div class="prod-desc" data-i18n="p1_desc">Cuero genuino artesanal, herrajes dorados, acabado de lujo italiano</div>
+        <div class="prod-footer">
+          <div><span class="prod-price">$459</span><span class="prod-price-old">$599</span></div>
+          <button class="add-cart-btn" onclick="addToCart(1,'Bolso Florentino de Cuero','Moda',459)" data-i18n="btn_cart">+ Carrito</button>
+        </div>
+      </div>
+    </div>
+    <!-- Product 2 -->
+    <div class="prod-card reveal">
+      <div class="prod-img">
+        <div class="prod-img-bg" style="background:linear-gradient(135deg,#0d0d1a 0%,#16163a 60%,#0d0d1a 100%);width:100%;height:100%;position:absolute;inset:0"></div>
+        <div class="prod-img-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <div class="prod-badge new" data-i18n="badge_new">NUEVO</div>
+        <button class="prod-wish"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
+      </div>
+      <div class="prod-info">
+        <div class="prod-category" data-i18n="pcat_joy">Joyería & Relojes</div>
+        <div class="prod-name" data-i18n="p2_name">Collar de Perlas Akoya</div>
+        <div class="prod-desc" data-i18n="p2_desc">Perlas naturales japonesas con cierre en oro 18k, certificado de autenticidad</div>
+        <div class="prod-footer">
+          <div><span class="prod-price">$899</span></div>
+          <button class="add-cart-btn" onclick="addToCart(2,'Collar de Perlas Akoya','Joyería',899)" data-i18n="btn_cart">+ Carrito</button>
+        </div>
+      </div>
+    </div>
+    <!-- Product 3 -->
+    <div class="prod-card reveal">
+      <div class="prod-img">
+        <div class="prod-img-bg" style="background:linear-gradient(135deg,#1a0a10 0%,#2d1018 60%,#1a0a10 100%);width:100%;height:100%;position:absolute;inset:0"></div>
+        <div class="prod-img-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+        <button class="prod-wish"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
+      </div>
+      <div class="prod-info">
+        <div class="prod-category" data-i18n="pcat_bel">Belleza & Cuidado</div>
+        <div class="prod-name" data-i18n="p3_name">Perfume Or Noir — 100ml</div>
+        <div class="prod-desc" data-i18n="p3_desc">Fragancia oriental exclusiva, notas de oud, ámbar y flores de jazmín</div>
+        <div class="prod-footer">
+          <div><span class="prod-price">$229</span></div>
+          <button class="add-cart-btn" onclick="addToCart(3,'Perfume Or Noir 100ml','Belleza',229)" data-i18n="btn_cart">+ Carrito</button>
+        </div>
+      </div>
+    </div>
+    <!-- Product 4 -->
+    <div class="prod-card reveal">
+      <div class="prod-img">
+        <div class="prod-img-bg" style="background:linear-gradient(135deg,#0a1205 0%,#152005 60%,#0a1205 100%);width:100%;height:100%;position:absolute;inset:0"></div>
+        <div class="prod-img-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <div class="prod-badge" data-i18n="badge_sale">OFERTA</div>
+        <button class="prod-wish"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
+      </div>
+      <div class="prod-info">
+        <div class="prod-category" data-i18n="pcat_hog">Hogar & Decoración</div>
+        <div class="prod-name" data-i18n="p4_name">Set de Sábanas Egipcias</div>
+        <div class="prod-desc" data-i18n="p4_desc">Algodón egipcio 1200 hilos, suavidad incomparable, queen/king disponible</div>
+        <div class="prod-footer">
+          <div><span class="prod-price">$329</span><span class="prod-price-old">$420</span></div>
+          <button class="add-cart-btn" onclick="addToCart(4,'Set de Sábanas Egipcias','Hogar',329)" data-i18n="btn_cart">+ Carrito</button>
+        </div>
+      </div>
+    </div>
+    <!-- Product 5 -->
+    <div class="prod-card reveal">
+      <div class="prod-img">
+        <div class="prod-img-bg" style="background:linear-gradient(135deg,#10100a 0%,#201e05 60%,#10100a 100%);width:100%;height:100%;position:absolute;inset:0"></div>
+        <div class="prod-img-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div class="prod-badge new" data-i18n="badge_new">NUEVO</div>
+        <button class="prod-wish"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
+      </div>
+      <div class="prod-info">
+        <div class="prod-category" data-i18n="pcat_joy">Joyería & Relojes</div>
+        <div class="prod-name" data-i18n="p5_name">Reloj Monaco Gold Edition</div>
+        <div class="prod-desc" data-i18n="p5_desc">Acero inoxidable bañado en oro 24k, movimiento suizo automático</div>
+        <div class="prod-footer">
+          <div><span class="prod-price">$1,299</span></div>
+          <button class="add-cart-btn" onclick="addToCart(5,'Reloj Monaco Gold Edition','Joyería',1299)" data-i18n="btn_cart">+ Carrito</button>
+        </div>
+      </div>
+    </div>
+    <!-- Product 6 -->
+    <div class="prod-card reveal">
+      <div class="prod-img">
+        <div class="prod-img-bg" style="background:linear-gradient(135deg,#100a1a 0%,#1e0e2d 60%,#100a1a 100%);width:100%;height:100%;position:absolute;inset:0"></div>
+        <div class="prod-img-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <button class="prod-wish"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
+      </div>
+      <div class="prod-info">
+        <div class="prod-category" data-i18n="pcat_tech">Tecnología Premium</div>
+        <div class="prod-name" data-i18n="p6_name">Tablet Pro Gold Bundle</div>
+        <div class="prod-desc" data-i18n="p6_desc">Paquete premium con accesorios exclusivos, funda de cuero y garantía extendida</div>
+        <div class="prod-footer">
+          <div><span class="prod-price">$1,599</span></div>
+          <button class="add-cart-btn" onclick="addToCart(6,'Tablet Pro Gold Bundle','Tecnología',1599)" data-i18n="btn_cart">+ Carrito</button>
+        </div>
+      </div>
+    </div>
+    <!-- Product 7 -->
+    <div class="prod-card reveal">
+      <div class="prod-img">
+        <div class="prod-img-bg" style="background:linear-gradient(135deg,#1a0e05 0%,#2d1a08 60%,#1a0e05 100%);width:100%;height:100%;position:absolute;inset:0"></div>
+        <div class="prod-img-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+        <div class="prod-badge new" data-i18n="badge_new">NUEVO</div>
+        <button class="prod-wish"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
+      </div>
+      <div class="prod-info">
+        <div class="prod-category" data-i18n="pcat_bel">Belleza & Cuidado</div>
+        <div class="prod-name" data-i18n="p7_name">Crema Cellulaire Luxe 24k</div>
+        <div class="prod-desc" data-i18n="p7_desc">Crema anti-edad con oro coloidal 24k, células madre vegetales, 50ml</div>
+        <div class="prod-footer">
+          <div><span class="prod-price">$289</span><span class="prod-price-old">$360</span></div>
+          <button class="add-cart-btn" onclick="addToCart(7,'Crema Cellulaire Luxe 24k','Belleza',289)" data-i18n="btn_cart">+ Carrito</button>
+        </div>
+      </div>
+    </div>
+    <!-- Product 8 -->
+    <div class="prod-card reveal">
+      <div class="prod-img">
+        <div class="prod-img-bg" style="background:linear-gradient(135deg,#050f1a 0%,#081825 60%,#050f1a 100%);width:100%;height:100%;position:absolute;inset:0"></div>
+        <div class="prod-img-icon"><svg viewBox="0 0 24 24"><path d="M20.38 3.46L16 2a4 4 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.57a1 1 0 00.99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 002-2V10h2.15a1 1 0 00.99-.84l.58-3.57a2 2 0 00-1.34-2.23z"/></svg></div>
+        <button class="prod-wish"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
+      </div>
+      <div class="prod-info">
+        <div class="prod-category" data-i18n="pcat_moda">Moda & Accesorios</div>
+        <div class="prod-name" data-i18n="p8_name">Bufanda Kashmir Royal</div>
+        <div class="prod-desc" data-i18n="p8_desc">Cachemir puro himalayo, tejido a mano, tacto sedoso inigualable, 180×70cm</div>
+        <div class="prod-footer">
+          <div><span class="prod-price">$349</span></div>
+          <button class="add-cart-btn" onclick="addToCart(8,'Bufanda Kashmir Royal','Moda',349)" data-i18n="btn_cart">+ Carrito</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ABOUT / DIRECTOR ═══ -->
+<section id="about">
+  <div class="about-inner">
+    <div class="about-left reveal">
+      <div class="about-portrait">
+        <div class="portrait-frame">
+          <div class="portrait-corner pc-tl"></div>
+          <div class="portrait-corner pc-tr"></div>
+          <div class="portrait-corner pc-bl"></div>
+          <div class="portrait-corner pc-br"></div>
+        </div>
+        <div class="portrait-initials">
+          <span>MM</span>
+          <small>LUXORA SERVICES</small>
+        </div>
+        <div class="portrait-name">
+          <strong>Melissa Martinez</strong>
+          <em data-i18n="director_title">Directora General & Fundadora</em>
+        </div>
+      </div>
+    </div>
+    <div class="about-right reveal">
+      <span class="section-tag" data-i18n="about_tag">Nuestra Historia</span>
+      <h2><em data-i18n="about_h2a">Excelencia</em> <span data-i18n="about_h2b">en Cada Detalle</span></h2>
+      <div class="gold-line" style="margin:24px 0 28px"></div>
+      <p class="about-body" data-i18n="about_body">Luxora Services nació con una visión clara: llevar productos de calidad premium a toda América, con precios que genuinamente sorprenden. Bajo el liderazgo de Melissa Martinez, hemos construido una tienda de confianza que conecta lo mejor del mundo con los hogares de miles de familias en Estados Unidos y Latinoamérica.</p>
+      <p class="about-body" data-i18n="about_body2">Cada producto en nuestra colección pasa por un riguroso proceso de selección para garantizar que cumple con los más altos estándares de calidad, autenticidad y valor. No vendemos productos — creamos experiencias de lujo accesible.</p>
+      <div class="about-stats">
+        <div class="stat-item">
+          <span class="stat-num">20+</span>
+          <span class="stat-label" data-i18n="stat1">Países</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">5K+</span>
+          <span class="stat-label" data-i18n="stat2">Clientes</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">250+</span>
+          <span class="stat-label" data-i18n="stat3">Productos</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SHIPPING ═══ -->
+<section id="shipping">
+  <div class="ship-inner">
+    <div class="ship-map reveal">
+      <svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+        <!-- Simplified Americas map -->
+        <defs>
+          <radialGradient id="glow1" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#C9A84C" stop-opacity="0.3"/>
+            <stop offset="100%" stop-color="#C9A84C" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <!-- USA rough shape -->
+        <path d="M80 60 L190 55 L200 80 L195 100 L170 108 L140 105 L100 110 L75 95 Z" fill="#C9A84C20" stroke="#C9A84C" stroke-width="1"/>
+        <!-- Mexico -->
+        <path d="M100 110 L170 108 L175 130 L160 145 L130 148 L105 135 Z" fill="#C9A84C15" stroke="#C9A84C" stroke-width=".8"/>
+        <!-- Central America -->
+        <path d="M130 148 L155 148 L158 168 L140 175 L125 165 Z" fill="#C9A84C10" stroke="#C9A84C" stroke-width=".6"/>
+        <!-- Colombia/Venezuela -->
+        <path d="M130 182 L165 178 L170 200 L145 210 L125 200 Z" fill="#C9A84C15" stroke="#C9A84C" stroke-width=".8"/>
+        <!-- Brazil -->
+        <path d="M145 200 L210 185 L225 220 L200 255 L155 250 L135 230 Z" fill="#C9A84C12" stroke="#C9A84C" stroke-width="1"/>
+        <!-- Argentina/Chile -->
+        <path d="M155 250 L175 250 L170 280 L150 278 Z" fill="#C9A84C10" stroke="#C9A84C" stroke-width=".7"/>
+        <!-- Glow dots for major cities -->
+        <circle cx="135" cy="80" r="6" fill="url(#glow1)"/><circle cx="135" cy="80" r="2.5" fill="#C9A84C"/>
+        <circle cx="145" cy="120" r="6" fill="url(#glow1)"/><circle cx="145" cy="120" r="2" fill="#C9A84C"/>
+        <circle cx="148" cy="195" r="6" fill="url(#glow1)"/><circle cx="148" cy="195" r="2" fill="#C9A84C"/>
+        <circle cx="180" cy="230" r="6" fill="url(#glow1)"/><circle cx="180" cy="230" r="2" fill="#C9A84C"/>
+        <circle cx="160" cy="268" r="5" fill="url(#glow1)"/><circle cx="160" cy="268" r="1.8" fill="#C9A84C"/>
+        <!-- Labels -->
+        <text x="140" y="72" font-family="Cinzel,serif" font-size="8" fill="#C9A84C" letter-spacing="2">USA</text>
+        <text x="130" y="128" font-family="Cinzel,serif" font-size="6.5" fill="#C9A84C99" letter-spacing="1">MÉXICO</text>
+        <text x="152" y="196" font-family="Cinzel,serif" font-size="6" fill="#C9A84C99">COL</text>
+        <text x="165" y="232" font-family="Cinzel,serif" font-size="6.5" fill="#C9A84C99" letter-spacing="1">BRASIL</text>
+        <!-- Connecting lines -->
+        <line x1="135" y1="80" x2="145" y2="120" stroke="#C9A84C30" stroke-width=".8" stroke-dasharray="3,3"/>
+        <line x1="145" y1="120" x2="148" y2="195" stroke="#C9A84C25" stroke-width=".8" stroke-dasharray="3,3"/>
+        <line x1="148" y1="195" x2="180" y2="230" stroke="#C9A84C25" stroke-width=".8" stroke-dasharray="3,3"/>
+      </svg>
+    </div>
+    <div class="ship-info reveal">
+      <span class="section-tag" data-i18n="ship_tag">Cobertura de Envíos</span>
+      <h2><em data-i18n="ship_h2a">Enviamos</em> <span data-i18n="ship_h2b">a Todo el Continente</span></h2>
+      <div class="gold-line" style="margin:20px 0 24px"></div>
+      <p data-i18n="ship_body">Desde Estados Unidos hasta el extremo sur de Latinoamérica, llevamos nuestros productos premium directamente a tu puerta con total seguridad y rapidez.</p>
+      <div class="ship-zones">
+        <div class="ship-zone">
+          <div class="zone-dot"></div>
+          <div class="zone-text">
+            <strong data-i18n="zone1_t">Estados Unidos</strong>
+            <span data-i18n="zone1_s">2–5 días hábiles · Envío gratis +$150</span>
+          </div>
+        </div>
+        <div class="ship-zone">
+          <div class="zone-dot" style="background:var(--gold-d)"></div>
+          <div class="zone-text">
+            <strong data-i18n="zone2_t">México & Centroamérica</strong>
+            <span data-i18n="zone2_s">5–10 días hábiles · Tracking incluido</span>
+          </div>
+        </div>
+        <div class="ship-zone">
+          <div class="zone-dot" style="background:var(--gold-d);opacity:.7"></div>
+          <div class="zone-text">
+            <strong data-i18n="zone3_t">Sudamérica</strong>
+            <span data-i18n="zone3_s">7–14 días hábiles · Seguro de envío incluido</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="contact-info reveal">
+      <span class="section-tag" data-i18n="con_tag">Contáctanos</span>
+      <h2><em data-i18n="con_h2a">Estamos</em> <span data-i18n="con_h2b">Para Ti</span></h2>
+      <div class="gold-line" style="margin:20px 0 24px"></div>
+      <p data-i18n="con_body">Nuestro equipo de atención personalizada está listo para ayudarte. No importa tu consulta, estamos aquí para brindarte la mejor experiencia de compra premium.</p>
+      <div class="contact-details">
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.63 19.79 19.79 0 01.0 2a2 2 0 012-2.18h3A2 2 0 017 1.72 12.84 12.84 0 007.7 5.6a2 2 0 01-.45 2.11L6.09 8.87a16 16 0 006 6l1.16-1.16a2 2 0 012.11-.45 12.84 12.84 0 003.88.7A2 2 0 0121.27 16z"/></svg>
+          </div>
+          <div>
+            <strong data-i18n="con_phone_l">Teléfono / WhatsApp</strong>
+            <a href="tel:7866812949">+1 (786) 681-2949</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <strong data-i18n="con_email_l">Correo Electrónico</strong>
+            <a href="mailto:melissa9815222@gmail.com">melissa9815222@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <strong data-i18n="con_loc_l">Ubicación</strong>
+            <span data-i18n="con_loc">Estados Unidos · Envíos a toda Latinoamérica</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <strong data-i18n="con_hours_l">Horario de Atención</strong>
+            <span data-i18n="con_hours">Lun–Vie 9am–7pm EST · Sáb 10am–4pm</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form-wrap reveal">
+      <h3 data-i18n="form_title">Envíanos un Mensaje</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label data-i18n="form_name">Nombre</label>
+          <input type="text" id="fName" placeholder="Tu nombre completo">
+        </div>
+        <div class="form-group">
+          <label data-i18n="form_email">Correo</label>
+          <input type="email" id="fEmail" placeholder="correo@ejemplo.com">
+        </div>
+      </div>
+      <div class="form-group">
+        <label data-i18n="form_subject">Asunto</label>
+        <input type="text" id="fSubject" placeholder="">
+      </div>
+      <div class="form-group">
+        <label data-i18n="form_country">País</label>
+        <select id="fCountry">
+          <option value="">— Seleccionar —</option>
+          <option>United States</option><option>México</option><option>Colombia</option>
+          <option>Argentina</option><option>Chile</option><option>Perú</option>
+          <option>Venezuela</option><option>Ecuador</option><option>Bolivia</option>
+          <option>Uruguay</option><option>Paraguay</option><option>Costa Rica</option>
+          <option>Guatemala</option><option>Honduras</option><option>El Salvador</option>
+          <option>Nicaragua</option><option>Panamá</option><option>Cuba</option>
+          <option>República Dominicana</option><option>Puerto Rico</option><option>Otro</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label data-i18n="form_msg">Mensaje</label>
+        <textarea id="fMsg" placeholder=""></textarea>
+      </div>
+      <button class="btn-gold" style="width:100%;justify-content:center" onclick="submitContact()">
+        <span data-i18n="form_btn">Enviar Mensaje</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+      <p id="formMsg" style="text-align:center;margin-top:16px;font-family:var(--ff-h);font-style:italic;color:var(--gold);display:none" data-i18n="form_sent">¡Mensaje enviado! Te responderemos pronto.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo-text" style="font-size:16px">LUXORA <span style="color:var(--gold)">SERVICES</span></div>
+        <p data-i18n="footer_desc">Calidad premium, precios que sorprenden. Llevamos lo mejor del mundo a tu puerta, en Estados Unidos y toda Latinoamérica.</p>
+        <div class="footer-social">
+          <a href="#" class="social-btn" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" class="social-btn" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="#" class="social-btn" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></a>
+          <a href="#" class="social-btn" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="fc1_title">Tienda</h4>
+        <ul>
+          <li><a href="#products" data-i18n="fc1_1">Productos Destacados</a></li>
+          <li><a href="#categories" data-i18n="fc1_2">Categorías</a></li>
+          <li><a href="#" data-i18n="fc1_3">Novedades</a></li>
+          <li><a href="#" data-i18n="fc1_4">Ofertas Especiales</a></li>
+          <li><a href="#" data-i18n="fc1_5">Colección VIP</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="fc2_title">Información</h4>
+        <ul>
+          <li><a href="#about" data-i18n="fc2_1">Sobre Nosotros</a></li>
+          <li><a href="#shipping" data-i18n="fc2_2">Envíos & Tracking</a></li>
+          <li><a href="#" data-i18n="fc2_3">Política de Devoluciones</a></li>
+          <li><a href="#" data-i18n="fc2_4">Términos & Condiciones</a></li>
+          <li><a href="#" data-i18n="fc2_5">Privacidad</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="fc3_title">Contacto</h4>
+        <ul>
+          <li><a href="tel:7866812949">+1 (786) 681-2949</a></li>
+          <li><a href="mailto:melissa9815222@gmail.com" style="font-size:12px">melissa9815222@gmail.com</a></li>
+          <li><a href="#" data-i18n="fc3_3">Estados Unidos</a></li>
+          <li><a href="https://wa.me/17866812949" data-i18n="fc3_wa">WhatsApp Directo</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 <a href="#">LUXORA SERVICES</a> · <span data-i18n="footer_ceo">Fundada y dirigida por</span> <a href="#">Melissa Martinez</a> · <span data-i18n="footer_rights">Todos los derechos reservados</span></p>
+      <div class="footer-pay">
+        <div class="pay-badge">VISA</div>
+        <div class="pay-badge">MASTERCARD</div>
+        <div class="pay-badge">AMEX</div>
+        <div class="pay-badge">PAYPAL</div>
+        <div class="pay-badge">ZELLE</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══ CART DRAWER ═══ -->
+<div id="cart-overlay" onclick="closeCart()"></div>
+<div id="cart-drawer">
+  <div class="cart-header">
+    <h3 data-i18n="cart_title">Mi Carrito</h3>
+    <button class="cart-close" onclick="closeCart()">
+      <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty" id="cartEmpty">
+      <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      <span data-i18n="cart_empty">Tu carrito está vacío</span>
+    </div>
+  </div>
+  <div class="cart-footer" id="cartFooter" style="display:none">
+    <div class="cart-subtotal">
+      <span data-i18n="cart_sub">Subtotal</span>
+      <strong id="cartTotal">$0</strong>
+    </div>
+    <button class="cart-checkout-btn" onclick="openCheckout()" data-i18n="cart_checkout">Proceder al Pago</button>
+    <button class="cart-continue" onclick="closeCart()" data-i18n="cart_continue">← Continuar comprando</button>
+  </div>
+</div>
+
+<!-- ═══ CHECKOUT MODAL ═══ -->
+<div id="checkout-modal">
+  <div class="checkout-box">
+    <div class="checkout-head">
+      <h3 data-i18n="chk_title">Finalizar Compra</h3>
+      <button class="modal-close-btn" onclick="closeCheckout()">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="checkout-body">
+      <!-- Shipping Info -->
+      <div class="checkout-section-title" data-i18n="chk_ship">Información de Envío</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label data-i18n="chk_fname">Nombre</label>
+          <input type="text" placeholder="Nombre">
+        </div>
+        <div class="form-group">
+          <label data-i18n="chk_lname">Apellido</label>
+          <input type="text" placeholder="Apellido">
+        </div>
+      </div>
+      <div class="form-group">
+        <label data-i18n="chk_addr">Dirección</label>
+        <input type="text" placeholder="Calle, número, apto">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label data-i18n="chk_city">Ciudad</label>
+          <input type="text" placeholder="Ciudad">
+        </div>
+        <div class="form-group">
+          <label data-i18n="chk_zip">Código Postal</label>
+          <input type="text" placeholder="ZIP / CP">
+        </div>
+      </div>
+      <div class="form-group">
+        <label data-i18n="chk_country">País</label>
+        <select>
+          <option>United States</option><option>México</option><option>Colombia</option>
+          <option>Argentina</option><option>Chile</option><option>Perú</option>
+          <option>Venezuela</option><option>Ecuador</option><option>Otro</option>
+        </select>
+      </div>
+      <!-- Payment Info -->
+      <div class="checkout-section-title" style="margin-top:28px" data-i18n="chk_pay">Información de Pago</div>
+      <div class="form-group">
+        <label data-i18n="chk_card">Número de Tarjeta</label>
+        <div class="card-input-wrap">
+          <input type="text" placeholder="0000 0000 0000 0000" maxlength="19" oninput="formatCard(this)">
+          <div class="card-icon"><svg viewBox="0 0 38 24"><rect width="38" height="24" rx="3" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5 10h28M5 14h8" stroke="currentColor" stroke-width="1.5"/></svg></div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label data-i18n="chk_exp">Vencimiento</label>
+          <input type="text" placeholder="MM / AA" maxlength="7">
+        </div>
+        <div class="form-group">
+          <label>CVV</label>
+          <input type="text" placeholder="123" maxlength="4">
+        </div>
+      </div>
+      <div class="form-group">
+        <label data-i18n="chk_holder">Nombre en la Tarjeta</label>
+        <input type="text" placeholder="Como aparece en la tarjeta">
+      </div>
+      <!-- Order Summary -->
+      <div class="checkout-total" id="checkoutSummary"></div>
+      <button class="checkout-submit" onclick="processPayment()" data-i18n="chk_submit">Confirmar y Pagar</button>
+      <div class="checkout-secure">
+        <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        <span data-i18n="chk_sec">Pago 100% seguro · Encriptación SSL</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SUCCESS MODAL ═══ -->
+<div id="success-modal">
+  <div class="success-box">
+    <div class="success-icon">
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <h2 data-i18n="suc_title">¡Pedido Confirmado!</h2>
+    <div class="gold-line" style="margin:0 auto 24px;width:80px"></div>
+    <p data-i18n="suc_body">Tu pedido ha sido procesado exitosamente. Recibirás un correo de confirmación con tu número de seguimiento en los próximos minutos.</p>
+    <p class="success-order" id="orderNum">ORDEN #LX-000000</p>
+    <button class="btn-gold" style="margin:0 auto;display:inline-flex" onclick="closeSuccess()" data-i18n="suc_btn">Volver a la Tienda</button>
+  </div>
+</div>
+
+<script>
+/* ════════════════════════════════
+   TRANSLATIONS
+═══════════════════════════════════ */
+const T={
+es:{
+  nav_home:'Inicio',nav_categories:'Categorías',nav_products:'Productos',nav_about:'Nosotros',nav_contact:'Contacto',
+  hero_pre:'Bienvenido a la Excelencia',hero_slogan:'Calidad premium, precios que sorprenden',
+  hero_cta1:'Explorar Colección',hero_cta2:'Ver Categorías',hero_scroll:'Descubrir',
+  trust1_t:'Envío Express',trust1_s:'USA & Latinoamérica',trust2_t:'Pago Seguro',trust2_s:'SSL 256-bit cifrado',
+  trust3_t:'USA · LATAM',trust3_s:'20+ países de cobertura',trust4_t:'Garantía Premium',trust4_s:'30 días sin preguntas',
+  cat_tag:'Nuestras Categorías',cat_h2a:'Explorar',cat_h2b:'Todo el Catálogo',
+  cat_sub:'Descubre nuestra amplia selección de productos premium en cada categoría',
+  cat1:'Moda & Accesorios',cat1c:'48 productos',cat2:'Joyería & Relojes',cat2c:'36 productos',
+  cat3:'Belleza & Cuidado',cat3c:'54 productos',cat4:'Hogar & Decoración',cat4c:'62 productos',
+  cat5:'Tecnología Premium',cat5c:'29 productos',cat6:'Arte & Coleccionables',cat6c:'18 productos',
+  cat7:'Viajes & Experiencias',cat7c:'25 paquetes',cat8:'Servicios Exclusivos',cat8c:'VIP & Personalizado',
+  mq1:'Envíos Express',mq2:'Calidad Premium',mq3:'USA & Latinoamérica',mq4:'Garantía Total',mq5:'Atención Personalizada',mq6:'Productos Exclusivos',
+  prod_tag:'Colección Destacada',prod_h2a:'Productos',prod_h2b:'Premium',prod_sub:'Selección curada de los mejores artículos de lujo',
+  badge_sale:'OFERTA',badge_new:'NUEVO',
+  pcat_moda:'Moda & Accesorios',pcat_joy:'Joyería & Relojes',pcat_bel:'Belleza & Cuidado',pcat_hog:'Hogar & Decoración',pcat_tech:'Tecnología Premium',
+  p1_name:'Bolso Florentino de Cuero',p1_desc:'Cuero genuino artesanal, herrajes dorados, acabado de lujo italiano',
+  p2_name:'Collar de Perlas Akoya',p2_desc:'Perlas naturales japonesas con cierre en oro 18k, certificado de autenticidad',
+  p3_name:'Perfume Or Noir — 100ml',p3_desc:'Fragancia oriental exclusiva, notas de oud, ámbar y flores de jazmín',
+  p4_name:'Set de Sábanas Egipcias',p4_desc:'Algodón egipcio 1200 hilos, suavidad incomparable, queen/king disponible',
+  p5_name:'Reloj Monaco Gold Edition',p5_desc:'Acero inoxidable bañado en oro 24k, movimiento suizo automático',
+  p6_name:'Tablet Pro Gold Bundle',p6_desc:'Paquete premium con accesorios exclusivos, funda de cuero y garantía extendida',
+  p7_name:'Crema Cellulaire Luxe 24k',p7_desc:'Crema anti-edad con oro coloidal 24k, células madre vegetales, 50ml',
+  p8_name:'Bufanda Kashmir Royal',p8_desc:'Cachemir puro himalayo, tejido a mano, tacto sedoso inigualable, 180×70cm',
+  btn_cart:'+ Carrito',
+  director_title:'Directora General & Fundadora',about_tag:'Nuestra Historia',
+  about_h2a:'Excelencia',about_h2b:'en Cada Detalle',
+  about_body:'Luxora Services nació con una visión clara: llevar productos de calidad premium a toda América, con precios que genuinamente sorprenden. Bajo el liderazgo de Melissa Martinez, hemos construido una tienda de confianza que conecta lo mejor del mundo con los hogares de miles de familias en Estados Unidos y Latinoamérica.',
+  about_body2:'Cada producto en nuestra colección pasa por un riguroso proceso de selección para garantizar que cumple con los más altos estándares de calidad, autenticidad y valor.',
+  stat1:'Países',stat2:'Clientes',stat3:'Productos',
+  ship_tag:'Cobertura de Envíos',ship_h2a:'Enviamos',ship_h2b:'a Todo el Continente',
+  ship_body:'Desde Estados Unidos hasta el extremo sur de Latinoamérica, llevamos nuestros productos premium directamente a tu puerta.',
+  zone1_t:'Estados Unidos',zone1_s:'2–5 días hábiles · Envío gratis +$150',
+  zone2_t:'México & Centroamérica',zone2_s:'5–10 días hábiles · Tracking incluido',
+  zone3_t:'Sudamérica',zone3_s:'7–14 días hábiles · Seguro de envío incluido',
+  con_tag:'Contáctanos',con_h2a:'Estamos',con_h2b:'Para Ti',
+  con_body:'Nuestro equipo de atención personalizada está listo para ayudarte en todo momento.',
+  con_phone_l:'Teléfono / WhatsApp',con_email_l:'Correo Electrónico',
+  con_loc_l:'Ubicación',con_loc:'Estados Unidos · Envíos a toda Latinoamérica',
+  con_hours_l:'Horario de Atención',con_hours:'Lun–Vie 9am–7pm EST · Sáb 10am–4pm',
+  form_title:'Envíanos un Mensaje',form_name:'Nombre',form_email:'Correo',
+  form_subject:'Asunto',form_country:'País',form_msg:'Mensaje',form_btn:'Enviar Mensaje',
+  form_sent:'¡Mensaje enviado! Te responderemos pronto.',
+  fc1_title:'Tienda',fc1_1:'Productos Destacados',fc1_2:'Categorías',fc1_3:'Novedades',fc1_4:'Ofertas Especiales',fc1_5:'Colección VIP',
+  fc2_title:'Información',fc2_1:'Sobre Nosotros',fc2_2:'Envíos & Tracking',fc2_3:'Política de Devoluciones',fc2_4:'Términos & Condiciones',fc2_5:'Privacidad',
+  fc3_title:'Contacto',fc3_3:'Estados Unidos',fc3_wa:'WhatsApp Directo',
+  footer_desc:'Calidad premium, precios que sorprenden. Llevamos lo mejor del mundo a tu puerta.',
+  footer_ceo:'Fundada y dirigida por',footer_rights:'Todos los derechos reservados',
+  cart_title:'Mi Carrito',cart_empty:'Tu carrito está vacío',cart_sub:'Subtotal',cart_checkout:'Proceder al Pago',cart_continue:'← Continuar comprando',
+  chk_title:'Finalizar Compra',chk_ship:'Información de Envío',chk_fname:'Nombre',chk_lname:'Apellido',
+  chk_addr:'Dirección',chk_city:'Ciudad',chk_zip:'Código Postal',chk_country:'País',
+  chk_pay:'Información de Pago',chk_card:'Número de Tarjeta',chk_exp:'Vencimiento',
+  chk_holder:'Nombre en la Tarjeta',chk_submit:'Confirmar y Pagar',chk_sec:'Pago 100% seguro · Encriptación SSL',
+  suc_title:'¡Pedido Confirmado!',suc_body:'Tu pedido ha sido procesado exitosamente. Recibirás confirmación con tu número de seguimiento.',
+  suc_btn:'Volver a la Tienda',
+},
+en:{
+  nav_home:'Home',nav_categories:'Categories',nav_products:'Products',nav_about:'About',nav_contact:'Contact',
+  hero_pre:'Welcome to Excellence',hero_slogan:'Premium quality, prices that surprise',
+  hero_cta1:'Explore Collection',hero_cta2:'View Categories',hero_scroll:'Discover',
+  trust1_t:'Express Shipping',trust1_s:'USA & Latin America',trust2_t:'Secure Payment',trust2_s:'256-bit SSL encryption',
+  trust3_t:'USA · LATAM',trust3_s:'20+ countries coverage',trust4_t:'Premium Guarantee',trust4_s:'30-day hassle-free returns',
+  cat_tag:'Our Categories',cat_h2a:'Explore',cat_h2b:'The Full Catalog',
+  cat_sub:'Discover our wide selection of premium products across every category',
+  cat1:'Fashion & Accessories',cat1c:'48 products',cat2:'Jewelry & Watches',cat2c:'36 products',
+  cat3:'Beauty & Care',cat3c:'54 products',cat4:'Home & Décor',cat4c:'62 products',
+  cat5:'Premium Technology',cat5c:'29 products',cat6:'Art & Collectibles',cat6c:'18 products',
+  cat7:'Travel & Experiences',cat7c:'25 packages',cat8:'Exclusive Services',cat8c:'VIP & Personalized',
+  mq1:'Express Shipping',mq2:'Premium Quality',mq3:'USA & Latin America',mq4:'Full Guarantee',mq5:'Personalized Service',mq6:'Exclusive Products',
+  prod_tag:'Featured Collection',prod_h2a:'Premium',prod_h2b:'Products',prod_sub:'Curated selection of the finest luxury items',
+  badge_sale:'SALE',badge_new:'NEW',
+  pcat_moda:'Fashion & Accessories',pcat_joy:'Jewelry & Watches',pcat_bel:'Beauty & Care',pcat_hog:'Home & Décor',pcat_tech:'Premium Technology',
+  p1_name:'Florentine Leather Bag',p1_desc:'Handcrafted genuine leather, gold hardware, Italian luxury finish',
+  p2_name:'Akoya Pearl Necklace',p2_desc:'Japanese natural pearls with 18k gold clasp, certificate of authenticity',
+  p3_name:'Or Noir Perfume — 100ml',p3_desc:'Exclusive oriental fragrance, notes of oud, amber and jasmine flowers',
+  p4_name:'Egyptian Cotton Sheet Set',p4_desc:'1200-thread Egyptian cotton, incomparable softness, queen/king available',
+  p5_name:'Monaco Gold Watch Edition',p5_desc:'24k gold-plated stainless steel, Swiss automatic movement',
+  p6_name:'Tablet Pro Gold Bundle',p6_desc:'Premium bundle with exclusive accessories, leather case and extended warranty',
+  p7_name:'Cellulaire Luxe 24k Cream',p7_desc:'24k colloidal gold anti-aging cream, plant stem cells, 50ml',
+  p8_name:'Kashmir Royal Scarf',p8_desc:'Pure Himalayan cashmere, hand-woven, unmatched silky feel, 180×70cm',
+  btn_cart:'+ Add',
+  director_title:'CEO & Founder',about_tag:'Our Story',
+  about_h2a:'Excellence',about_h2b:'in Every Detail',
+  about_body:'Luxora Services was born with a clear vision: bringing premium quality products across the Americas at prices that genuinely surprise. Under the leadership of Melissa Martinez, we have built a trusted store that connects the world\'s finest goods with families across the United States and Latin America.',
+  about_body2:'Every product in our collection goes through a rigorous selection process to ensure it meets the highest standards of quality, authenticity and value.',
+  stat1:'Countries',stat2:'Clients',stat3:'Products',
+  ship_tag:'Shipping Coverage',ship_h2a:'We Ship',ship_h2b:'Across the Continent',
+  ship_body:'From the United States to the southernmost tip of Latin America, we deliver our premium products directly to your door.',
+  zone1_t:'United States',zone1_s:'2–5 business days · Free shipping +$150',
+  zone2_t:'Mexico & Central America',zone2_s:'5–10 business days · Tracking included',
+  zone3_t:'South America',zone3_s:'7–14 business days · Shipping insurance included',
+  con_tag:'Contact Us',con_h2a:'We Are',con_h2b:'Here for You',
+  con_body:'Our personalized service team is ready to assist you at any time with any question.',
+  con_phone_l:'Phone / WhatsApp',con_email_l:'Email Address',
+  con_loc_l:'Location',con_loc:'United States · Shipping to all Latin America',
+  con_hours_l:'Business Hours',con_hours:'Mon–Fri 9am–7pm EST · Sat 10am–4pm',
+  form_title:'Send Us a Message',form_name:'Name',form_email:'Email',
+  form_subject:'Subject',form_country:'Country',form_msg:'Message',form_btn:'Send Message',
+  form_sent:'Message sent! We\'ll get back to you soon.',
+  fc1_title:'Shop',fc1_1:'Featured Products',fc1_2:'Categories',fc1_3:'New Arrivals',fc1_4:'Special Offers',fc1_5:'VIP Collection',
+  fc2_title:'Information',fc2_1:'About Us',fc2_2:'Shipping & Tracking',fc2_3:'Return Policy',fc2_4:'Terms & Conditions',fc2_5:'Privacy',
+  fc3_title:'Contact',fc3_3:'United States',fc3_wa:'Direct WhatsApp',
+  footer_desc:'Premium quality, prices that surprise. We bring the world\'s best to your door.',
+  footer_ceo:'Founded and led by',footer_rights:'All rights reserved',
+  cart_title:'My Cart',cart_empty:'Your cart is empty',cart_sub:'Subtotal',cart_checkout:'Proceed to Checkout',cart_continue:'← Continue shopping',
+  chk_title:'Checkout',chk_ship:'Shipping Information',chk_fname:'First Name',chk_lname:'Last Name',
+  chk_addr:'Address',chk_city:'City',chk_zip:'ZIP Code',chk_country:'Country',
+  chk_pay:'Payment Information',chk_card:'Card Number',chk_exp:'Expiration',
+  chk_holder:'Name on Card',chk_submit:'Confirm & Pay',chk_sec:'100% secure payment · SSL Encryption',
+  suc_title:'Order Confirmed!',suc_body:'Your order has been processed successfully. You will receive a confirmation email with your tracking number shortly.',
+  suc_btn:'Back to Store',
+}};
+
+let lang='es';
+function setLang(l){
+  lang=l;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k=el.getAttribute('data-i18n');
+    if(T[l][k]!==undefined)el.textContent=T[l][k];
+  });
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent===l.toUpperCase()));
+  document.documentElement.lang=l;
+}
+
+/* ════════════════════════════════
+   CART
+═══════════════════════════════════ */
+let cart=[];
+function addToCart(id,name,cat,price){
+  const ex=cart.find(i=>i.id===id);
+  if(ex){ex.qty++;}else{cart.push({id,name,cat,price,qty:1});}
+  updateCartUI();
+  openCart();
+}
+function removeFromCart(id){cart=cart.filter(i=>i.id!==id);updateCartUI();}
+function changeQty(id,d){
+  const i=cart.find(x=>x.id===id);
+  if(i){i.qty+=d;if(i.qty<1)removeFromCart(id);else updateCartUI();}
+}
+function updateCartUI(){
+  const total=cart.reduce((s,i)=>s+i.price*i.qty,0);
+  const count=cart.reduce((s,i)=>s+i.qty,0);
+  const cc=document.getElementById('cartCount');
+  cc.textContent=count;
+  cc.classList.toggle('visible',count>0);
+  const ci=document.getElementById('cartItems');
+  const cf=document.getElementById('cartFooter');
+  const ce=document.getElementById('cartEmpty');
+  if(cart.length===0){ce.style.display='';cf.style.display='none';}
+  else{
+    ce.style.display='none';cf.style.display='';
+    const items=cart.map(i=>`
+      <div class="cart-item">
+        <div class="ci-img"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C9A84C50" stroke-width="1"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg></div>
+        <div class="ci-info">
+          <div class="ci-cat">${i.cat}</div>
+          <div class="ci-name">${i.name}</div>
+          <div class="ci-controls">
+            <div class="ci-qty">
+              <button onclick="changeQty(${i.id},-1)">−</button>
+              <span>${i.qty}</span>
+              <button onclick="changeQty(${i.id},1)">+</button>
+            </div>
+            <div class="ci-price">$${(i.price*i.qty).toLocaleString()}</div>
+          </div>
+          <button class="ci-remove" onclick="removeFromCart(${i.id})">${lang==='es'?'Eliminar':'Remove'}</button>
+        </div>
+      </div>`).join('');
+    ci.innerHTML=items;
+    document.getElementById('cartTotal').textContent='$'+total.toLocaleString();
+  }
+  updateCheckoutSummary();
+}
+function openCart(){
+  document.getElementById('cart-overlay').classList.add('open');
+  document.getElementById('cart-drawer').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeCart(){
+  document.getElementById('cart-overlay').classList.remove('open');
+  document.getElementById('cart-drawer').classList.remove('open');
+  document.body.style.overflow='';
+}
+function openCheckout(){
+  if(cart.length===0)return;
+  closeCart();
+  updateCheckoutSummary();
+  document.getElementById('checkout-modal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeCheckout(){
+  document.getElementById('checkout-modal').classList.remove('open');
+  document.body.style.overflow='';
+}
+function updateCheckoutSummary(){
+  const sub=cart.reduce((s,i)=>s+i.price*i.qty,0);
+  const ship=sub>150?0:12.99;
+  const total=sub+ship;
+  const s=document.getElementById('checkoutSummary');
+  if(!s)return;
+  s.innerHTML=`
+    <div class="checkout-total-row"><span data-i18n="cart_sub">${T[lang].cart_sub}</span><span>$${sub.toLocaleString()}</span></div>
+    <div class="checkout-total-row"><span>${lang==='es'?'Envío':'Shipping'}</span><span>${ship===0?(lang==='es'?'Gratis':'Free'):'$'+ship.toFixed(2)}</span></div>
+    <div class="checkout-total-row total"><span>${lang==='es'?'Total':'Total'}</span><span>$${total.toLocaleString()}</span></div>`;
+}
+function processPayment(){
+  const btn=document.querySelector('.checkout-submit');
+  btn.textContent=lang==='es'?'Procesando...':'Processing...';
+  btn.disabled=true;
+  setTimeout(()=>{
+    closeCheckout();
+    cart=[];
+    updateCartUI();
+    const oNum='LX-'+Math.floor(100000+Math.random()*900000);
+    document.getElementById('orderNum').textContent=(lang==='es'?'ORDEN #':'ORDER #')+oNum;
+    document.getElementById('success-modal').classList.add('open');
+    btn.textContent=T[lang].chk_submit;
+    btn.disabled=false;
+  },2200);
+}
+function closeSuccess(){
+  document.getElementById('success-modal').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+/* ════════════════════════════════
+   CONTACT FORM
+═══════════════════════════════════ */
+function submitContact(){
+  const msg=document.getElementById('formMsg');
+  msg.style.display='block';
+  setTimeout(()=>msg.style.display='none',4000);
+}
+
+/* ════════════════════════════════
+   NAV SCROLL
+═══════════════════════════════════ */
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>60);
+});
+
+/* ════════════════════════════════
+   MOBILE MENU
+═══════════════════════════════════ */
+function toggleMobileMenu(){
+  document.getElementById('navLinks').classList.toggle('mob-open');
+}
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{
+  document.getElementById('navLinks').classList.remove('mob-open');
+}));
+
+/* ════════════════════════════════
+   SCROLL REVEAL
+═══════════════════════════════════ */
+const revObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');revObs.unobserve(e.target);}});
+},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
+
+/* ════════════════════════════════
+   CARD FORMAT
+═══════════════════════════════════ */
+function formatCard(el){
+  let v=el.value.replace(/\D/g,'').substring(0,16);
+  el.value=v.replace(/(.{4})/g,'$1 ').trim();
+}
+
+/* ════════════════════════════════
+   CATEGORY FILTER (visual only)
+═══════════════════════════════════ */
+function filterCat(cat){
+  document.getElementById('products').scrollIntoView({behavior:'smooth'});
+}
+
+/* ════════════════════════════════
+   INIT
+═══════════════════════════════════ */
+updateCartUI();
+</script>
+</body>
+</html>
